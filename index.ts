@@ -68,6 +68,20 @@ app.get('/users', async (req: Request, res: Response) => {
   }
 });
 
+// productsテーブルの商品一覧を取得
+app.get('/db-sample', async (req: Request, res: Response): Promise<void> => {
+  try {
+    const result = await pool.query(
+      'SELECT id, name, price FROM products ORDER BY id'
+    );
+
+    res.json(result.rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: '商品データ取得エラー' });
+  }
+});
+
 // サーバー起動
 app.listen(port, (): void => {
   console.log(`Server started: http://localhost:${port}`);
