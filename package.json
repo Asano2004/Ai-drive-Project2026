@@ -4,9 +4,9 @@
   "description": "��#\u0000 \u0000A\u0000i\u0000-\u0000d\u0000r\u0000i\u0000v\u0000e\u0000-\u0000P\u0000r\u0000o\u0000j\u0000e\u0000c\u0000t\u00002\u00000\u00002\u00006\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-  "dev": "tsx watch ./index.ts",
-  "build": "tsc",
-  "start": "node ./dist/index.js"
+    "dev": "tsx watch ./index.ts",
+    "build": "tsc",
+    "start": "node ./dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,12 +21,15 @@
   },
   "homepage": "https://github.com/Asano2004/Ai-drive-Project2026#readme",
   "dependencies": {
+    "dotenv": "^18.0.6",
     "ejs": "^7.0.1",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "pg": "^8.23.1"
   },
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.4",
+    "@types/pg": "^8.23.1",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }
