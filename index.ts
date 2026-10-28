@@ -40,6 +40,23 @@ app.get('/db-test', async (req: Request, res: Response): Promise<void> => {
   }
 });
 
+// 課題用：Neonデータベース接続確認API
+app.get('/api/db-check', async (req: Request, res: Response): Promise<void> => {
+  try {
+    const result = await pool.query('SELECT NOW()');
+
+    res.json({
+      message: 'Neon接続成功',
+      time: result.rows[0].now
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error: 'データベース接続エラー'
+    });
+  }
+});
+
 // usersテーブルのデータを取得
 app.get('/users', async (req: Request, res: Response) => {
   try {
